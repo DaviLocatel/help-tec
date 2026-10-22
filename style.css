@@ -1,11 +1,3 @@
-/* =====================================================================
-   DESIGN SYSTEM — Help-Tec (equipe de 1 integrante)
-   Este arquivo vale até o fim da UC7. Toda página liga ele com:
-   <link rel="stylesheet" href="design-system.css">
-   Regra da equipe: nenhuma cor, fonte ou tamanho base aparece solto no CSS
-   das páginas. Use sempre var(--nome).
-   ===================================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600;700&display=swap');
 
 :root {
