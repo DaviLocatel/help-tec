@@ -1,0 +1,48 @@
+/* =====================================================================
+   DESIGN SYSTEM — Help-Tec (equipe de 1 integrante)
+   Este arquivo vale até o fim da UC7. Toda página liga ele com:
+   <link rel="stylesheet" href="design-system.css">
+   Regra da equipe: nenhuma cor, fonte ou tamanho base aparece solto no CSS
+   das páginas. Use sempre var(--nome).
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600;700&display=swap');
+
+:root {
+  /* ---- 3 cores ---- */
+  --cor-principal: #209c1b;  /* azul tecnologia: títulos, links e bordas */
+  --cor-escura:    #0f172a;  /* azul-marinho quase preto: textos */
+  --cor-destaque:  #145a06;  /* âmbar: botões e chamadas para ação */
+
+  /* ---- 2 fontes ---- */
+  --fonte-titulo: 'Poppins', sans-serif;  /* h1, h2 e h3 */
+  --fonte-texto:  'Inter', sans-serif;    /* parágrafos, menus e botões */
+
+  /* ---- tamanho base do texto ---- */
+  --tamanho-base: 1rem;      /* 1rem = 16px; respeita a configuração do navegador */
+  --altura-linha: 1.6;       /* respiro entre linhas em textos longos */
+}
+
+/* ---- Base: aplica o design system em todas as páginas ---- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  font-size: var(--tamanho-base);
+  line-height: var(--altura-linha);
+  color: var(--cor-escura);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  color: var(--cor-principal);
+}
+
+a {
+  color: var(--cor-principal);
+}
