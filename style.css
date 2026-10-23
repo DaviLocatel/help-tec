@@ -1,21 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600;700&display=swap');
 
 :root {
-  /* ---- 3 cores ---- */
-  --cor-principal: #209c1b;  /* azul tecnologia: títulos, links e bordas */
-  --cor-escura:    #0f172a;  /* azul-marinho quase preto: textos */
-  --cor-destaque:  #145a06;  /* âmbar: botões e chamadas para ação */
+  --cor-principal: #209c1b;  
+  --cor-escura:    #0f172a;  
+  --cor-destaque:  #145a06;  
+  --cor-fundo:     #f8fafc;  
+  --cor-superficie:#ffffff;  
+  --cor-borda:     #e2e8f0;
 
-  /* ---- 2 fontes ---- */
-  --fonte-titulo: 'Poppins', sans-serif;  /* h1, h2 e h3 */
-  --fonte-texto:  'Inter', sans-serif;    /* parágrafos, menus e botões */
+  --fonte-titulo: 'Poppins', sans-serif;
+  --fonte-texto:  'Inter', sans-serif;
 
-  /* ---- tamanho base do texto ---- */
-  --tamanho-base: 1rem;      /* 1rem = 16px; respeita a configuração do navegador */
-  --altura-linha: 1.6;       /* respiro entre linhas em textos longos */
+  --texto-pequeno: 0.875rem; 
+  --tamanho-base:  1rem;     
+  --titulo-h3:     1.25rem;  
+  --titulo-h2:     1.5rem;   
+  --titulo-h1:     2rem;     
+  --altura-linha:  1.6;
+
+  --espaco-1: 8px;
+  --espaco-2: 16px;
+  --espaco-3: 24px;
+  --espaco-4: 32px;
+  --espaco-6: 48px;
 }
 
-/* ---- Base: aplica o design system em todas as páginas ---- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,6 +36,7 @@ body {
   font-size: var(--tamanho-base);
   line-height: var(--altura-linha);
   color: var(--cor-escura);
+  background-color: var(--cor-fundo);
 }
 
 h1, h2, h3 {
@@ -35,6 +45,113 @@ h1, h2, h3 {
   color: var(--cor-principal);
 }
 
+h1 {
+  font-size: var(--titulo-h1);
+  margin-bottom: var(--espaco-2); 
+}
+
+h2 {
+  font-size: var(--titulo-h2);
+  margin-bottom: var(--espaco-2); 
+}
+
+h3 {
+  font-size: var(--titulo-h3);
+  margin-bottom: var(--espaco-1); 
+}
+
+p {
+  font-size: var(--tamanho-base);
+  margin-bottom: var(--espaco-2); 
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
 a {
+  font-size: var(--tamanho-base);
   color: var(--cor-principal);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:hover {
+  color: var(--cor-destaque);
+}
+
+header {
+  background-color: var(--cor-superficie);
+  border-bottom: 2px solid var(--cor-borda);
+  padding: var(--espaco-4) var(--espaco-3); 
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--espaco-2); 
+}
+
+nav a {
+  display: inline-block;
+  padding: var(--espaco-1) var(--espaco-2); 
+  border: 2px solid var(--cor-principal);
+  border-radius: var(--espaco-1); 
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie);
+}
+
+main {
+  max-width: 800px; 
+  margin: var(--espaco-4) auto; 
+  padding: 0 var(--espaco-3); 
+}
+
+section, article {
+  background-color: var(--cor-superficie);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--espaco-1); 
+  padding: var(--espaco-3); 
+  margin-bottom: var(--espaco-3); 
+}
+
+main ul {
+  padding-left: var(--espaco-3); 
+  margin-top: var(--espaco-1); 
+}
+
+main li {
+  font-size: var(--tamanho-base);
+  margin-bottom: var(--espaco-1); 
+}
+
+main li:last-child {
+  margin-bottom: 0;
+}
+
+article img {
+  display: block;
+  max-width: 160px; 
+  height: auto;
+  border-radius: var(--espaco-1); 
+  margin-bottom: var(--espaco-2); 
+}
+
+footer {
+  background-color: var(--cor-superficie);
+  border-top: 2px solid var(--cor-borda);
+  padding: var(--espaco-3); 
+  margin-top: var(--espaco-6); 
+  text-align: center;
+}
+
+footer p {
+  font-size: var(--texto-pequeno); 
 }
