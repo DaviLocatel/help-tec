@@ -1,30 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600;700&display=swap');
 
 :root {
-  --cor-principal: #209c1b;  
-  --cor-escura:    #0f172a;  
-  --cor-destaque:  #145a06;  
-  --cor-fundo:     #f8fafc;  
-  --cor-superficie:#ffffff;  
+  /* ---- Cores do Design System (Tema Verde Original) ---- */
+  --cor-principal: #209c1b;
+  --cor-escura:    #0f172a;
+  --cor-destaque:  #145a06;
+  --cor-fundo:     #f8fafc;
+  --cor-superficie:#ffffff;
   --cor-borda:     #e2e8f0;
 
+  /* ---- Fontes ---- */
   --fonte-titulo: 'Poppins', sans-serif;
   --fonte-texto:  'Inter', sans-serif;
 
-  --texto-pequeno: 0.875rem; 
-  --tamanho-base:  1rem;     
-  --titulo-h3:     1.25rem;  
-  --titulo-h2:     1.5rem;   
-  --titulo-h1:     2rem;     
+  /* ---- Escala Tipográfica (100% em rem) ---- */
+  --texto-pequeno: 0.875rem; /* 14px */
+  --tamanho-base:  1rem;     /* 16px */
+  --titulo-h3:     1.25rem;  /* 20px */
+  --titulo-h2:     1.5rem;   /* 24px */
+  --titulo-h1:     2rem;     /* 32px */
   --altura-linha:  1.6;
 
+  /* ---- Escala de Espaçamento (Múltiplos de 8px) ---- */
   --espaco-1: 8px;
   --espaco-2: 16px;
   --espaco-3: 24px;
   --espaco-4: 32px;
   --espaco-6: 48px;
+  --altura-logo: 56px;       /* 7 x 8px */
+  --tamanho-avatar: 80px;    /* 10 x 8px */
 }
 
+/* ---- Reset Base ---- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,8 +44,12 @@ body {
   line-height: var(--altura-linha);
   color: var(--cor-escura);
   background-color: var(--cor-fundo);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* ---- Tipografia ---- */
 h1, h2, h3 {
   font-family: var(--fonte-titulo);
   font-weight: 700;
@@ -47,22 +58,22 @@ h1, h2, h3 {
 
 h1 {
   font-size: var(--titulo-h1);
-  margin-bottom: var(--espaco-2); 
+  margin-bottom: var(--espaco-2);
 }
 
 h2 {
   font-size: var(--titulo-h2);
-  margin-bottom: var(--espaco-2); 
+  margin-bottom: var(--espaco-2);
 }
 
 h3 {
   font-size: var(--titulo-h3);
-  margin-bottom: var(--espaco-1); 
+  margin-bottom: var(--espaco-1);
 }
 
 p {
   font-size: var(--tamanho-base);
-  margin-bottom: var(--espaco-2); 
+  margin-bottom: var(--espaco-2);
 }
 
 p:last-child {
@@ -80,78 +91,158 @@ a:hover {
   color: var(--cor-destaque);
 }
 
-header {
+/* ---- Navbar com Flexbox ---- */
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
   background-color: var(--cor-superficie);
   border-bottom: 2px solid var(--cor-borda);
-  padding: var(--espaco-4) var(--espaco-3); 
-  text-align: center;
+  padding: var(--espaco-2) var(--espaco-4); /* 16px vertical, 32px horizontal */
 }
 
-nav ul {
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: var(--altura-logo); /* 56px */
+  width: auto;
+  border-radius: var(--espaco-1); /* 8px */
+  object-fit: contain;
+}
+
+nav.navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--espaco-2); 
+  gap: var(--espaco-2); /* 16px */
+  margin: 0;
+  padding: 0;
 }
 
-nav a {
+nav.navbar ul a {
   display: inline-block;
-  padding: var(--espaco-1) var(--espaco-2); 
+  padding: var(--espaco-1) var(--espaco-2); /* 8px 16px */
   border: 2px solid var(--cor-principal);
-  border-radius: var(--espaco-1); 
+  border-radius: var(--espaco-1); /* 8px */
   transition: background-color 0.2s, color 0.2s;
 }
 
-nav a:hover {
+nav.navbar ul a:hover {
   background-color: var(--cor-principal);
   color: var(--cor-superficie);
 }
 
-main {
-  max-width: 800px; 
-  margin: var(--espaco-4) auto; 
-  padding: 0 var(--espaco-3); 
+.btn-entrar {
+  display: inline-block;
+  padding: var(--espaco-1) var(--espaco-3); /* 8px 24px */
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie);
+  border: 2px solid var(--cor-principal);
+  border-radius: var(--espaco-1); /* 8px */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
-section, article {
+.btn-entrar:hover {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  color: var(--cor-superficie);
+}
+
+/* ---- Conteúdo Principal ---- */
+.container-principal {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: var(--espaco-4) auto; /* 32px */
+  padding: 0 var(--espaco-3); /* 24px */
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4); /* 32px de respiro entre o Hero e os Cards */
+}
+
+/* ---- Seção Hero (Texto + Imagem lado a lado com Flexbox) ---- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--espaco-4); /* 32px */
   background-color: var(--cor-superficie);
   border: 2px solid var(--cor-borda);
-  border-radius: var(--espaco-1); 
-  padding: var(--espaco-3); 
-  margin-bottom: var(--espaco-3); 
+  border-radius: var(--espaco-2); /* 16px */
+  padding: var(--espaco-4); /* 32px */
 }
 
-main ul {
-  padding-left: var(--espaco-3); 
-  margin-top: var(--espaco-1); 
+.hero-texto {
+  flex: 1 1 400px; /* Pode crescer, encolher e base de 400px */
 }
 
-main li {
-  font-size: var(--tamanho-base);
-  margin-bottom: var(--espaco-1); 
+.hero-imagem {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
 }
 
-main li:last-child {
-  margin-bottom: 0;
-}
-
-article img {
-  display: block;
-  max-width: 160px; 
+.hero-imagem img {
+  max-width: 100%;
   height: auto;
-  border-radius: var(--espaco-1); 
-  margin-bottom: var(--espaco-2); 
+  border-radius: var(--espaco-1); /* 8px */
 }
 
+.btn-hero {
+  display: inline-block;
+  margin-top: var(--espaco-2); /* 16px */
+  padding: var(--espaco-2) var(--espaco-3); /* 16px 24px */
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie);
+  border-radius: var(--espaco-1); /* 8px */
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+
+.btn-hero:hover {
+  background-color: var(--cor-destaque);
+  color: var(--cor-superficie);
+}
+
+/* ---- Grade de Cards (Flexbox + flex-wrap + gap) ---- */
+.grade-cards {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha perfeitamente no mobile */
+  gap: var(--espaco-3); /* 24px de espaçamento limpo sem usar margin */
+}
+
+.grade-cards .card {
+  flex: 1 1 280px; /* Cresce, encolhe e parte de 280px */
+  background-color: var(--cor-superficie);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--espaco-1); /* 8px */
+  padding: var(--espaco-3); /* 24px */
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.grade-cards .card:hover {
+  border-color: var(--cor-principal);
+  transform: translateY(-4px); /* Efeito moderno ao passar o mouse */
+}
+
+/* ---- Rodapé ---- */
 footer {
   background-color: var(--cor-superficie);
   border-top: 2px solid var(--cor-borda);
-  padding: var(--espaco-3); 
-  margin-top: var(--espaco-6); 
+  padding: var(--espaco-3); /* 24px */
+  margin-top: auto;
   text-align: center;
 }
 
 footer p {
-  font-size: var(--texto-pequeno); 
+  font-size: var(--texto-pequeno); /* 0.875rem */
 }
