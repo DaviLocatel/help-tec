@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help-Tec - Produtos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <!-- 1. Logo -->
+    <a href="inicio.html" class="logo-link" aria-label="Página Inicial">
+      <img src="logo.png" alt="Logo Help-Tec" class="logo-img">
+    </a>
+    
+    <!-- 2. MOTOR DO MENU MOBILE (Isso precisa estar em todas as páginas!) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-btn" aria-label="Abrir Menu">☰</label>
+
+    <!-- 3. PAINEL LATERAL (Nav2) -->
+    <div class="menu-colapsavel">
+      <div class="navegacao-setas">
+        <a href="sobre.html" class="btn-seta" aria-label="Página Anterior">&lt;</a>
+        
+        <ul class="menu-lista">
+          <li><a href="inicio.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="produtos.html" class="ativo">Produtos</a></li> <!-- ATIVO AQUI -->
+          <li><a href="recursos.html">Recursos</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="equipe.html">Sobre a Equipe</a></li>
+        </ul>
+
+        <a href="recursos.html" class="btn-seta" aria-label="Próxima Página">&gt;</a>
+      </div>
+      <button class="btn-entrar">Entrar</button>
+    </div>
+  </nav>
+
+  <main class="container-principal">
+    <h1>Hardware de Alta Performance</h1>
+    <section class="grade-cards">
+      
+      <!-- Produto 1 -->
+      <article class="card">
+        <img src="logo.png" alt="PC Gamer" class="img-produto">
+        <h3>PC Gamer T-Moba</h3>
+        <p>AMD Ryzen 5 5600G / 16GB DDR4 / SSD 480GB NVMe</p>
+        <p class="preco-riscado">De: R$ 3.200,00</p>
+        <p class="preco">R$ 2.499,00</p>
+        <!-- Link simulando a escolha do produto -->
+        <a href="produto-detalhe.html" class="btn-comprar">Comprar</a>
+      </article>
+
+      <!-- Produto 2 -->
+      <article class="card">
+        <img src="logo.png" alt="PC Workstation" class="img-produto">
+        <h3>PC Workstation PRO</h3>
+        <p>Intel Core i7 13700K / 32GB DDR5 / RTX 4060 Ti</p>
+        <p class="preco-riscado">De: R$ 8.500,00</p>
+        <p class="preco">R$ 7.199,00</p>
+        <a href="produto-detalhe.html" class="btn-comprar">Comprar</a>
+      </article>
+
+      <!-- Produto 3 -->
+      <article class="card">
+        <img src="logo.png" alt="Kit Upgrade" class="img-produto">
+        <h3>Kit Upgrade Gamer</h3>
+        <p>Placa Mãe B550M + Ryzen 7 5700X + Water Cooler 240mm</p>
+        <p class="preco-riscado">De: R$ 2.500,00</p>
+        <p class="preco">R$ 1.999,00</p>
+        <a href="produto-detalhe.html" class="btn-comprar">Comprar</a>
+      </article>
+
+    </section>
+  </main>
+
+  <footer><p>&copy; 2026 Help-Tec.</p></footer>
+</body>
+</html>
