@@ -9,29 +9,23 @@
 </head>
 <body>
   <nav class="navbar">
-    <a href="inicio.html" class="logo-link" aria-label="Página Inicial">
-      <img src="logo.png" alt="Logo Help-Tec" class="logo-img">
-    </a>
-    
+    <a href="inicio.html" class="logo-link"><img src="logo.png" alt="Logo Help-Tec" class="logo-img"></a>
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-btn" aria-label="Abrir Menu">☰</label>
-
+    <label for="menu-toggle" class="menu-btn">☰</label>
+    
     <div class="menu-colapsavel">
       <div class="navegacao-setas">
-        <a href="recursos.html" class="btn-seta" aria-label="Página Anterior">&lt;</a>
-        
         <ul class="menu-lista">
           <li><a href="inicio.html">Início</a></li>
           <li><a href="sobre.html">Sobre</a></li>
           <li><a href="produtos.html">Produtos</a></li>
           <li><a href="recursos.html">Recursos</a></li>
-          <li><a href="servicos.html" class="ativo">Serviços</a></li>
+          <li><a href="servicos.html"class="ativo">Serviços</a></li>
           <li><a href="equipe.html">Sobre a Equipe</a></li>
         </ul>
-
-        <a href="equipe.html" class="btn-seta" aria-label="Próxima Página">&gt;</a>
       </div>
-      <button class="btn-entrar">Entrar</button>
+      <!-- O botão agora é um link <a> que leva para o login -->
+      <a href="login.html" class="btn-entrar">Entrar</a>
     </div>
   </nav>
 

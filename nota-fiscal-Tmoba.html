@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documento Auxiliar da Nota Fiscal - Help-Tec</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #ffffff;
+      color: #000000;
+      padding: 40px;
+      line-height: 1.4;
+    }
+    .container-nf {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid #000;
+      padding: 20px;
+    }
+    .cabecalho-nf {
+      text-align: center;
+      border-bottom: 2px dashed #000;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    h1, h2, h3 { margin: 5px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: left;
+    }
+    th { background-color: #f0f0f0; }
+    .totais-nf {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: right;
+      font-weight: bold;
+    }
+    .aviso { text-align: center; font-size: 12px; margin-top: 30px; font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <div class="container-nf">
+    <div class="cabecalho-nf">
+      <h2>DANFE - Documento Auxiliar da Nota Fiscal Eletrônica</h2>
+      <h1>HELP-TEC COMÉRCIO DE INFORMÁTICA LTDA</h1>
+      <p>CNPJ: 00.000.000/0001-00 | Inscrição Estadual: 123.456.789</p>
+      <p>Rua Fictícia da Tecnologia, 1024 - Vila Velha, ES</p>
+      <p><strong>Nº 000.001.024 - SÉRIE 1</strong></p>
+    </div>
+
+    <h3>DADOS DO CLIENTE</h3>
+    <table>
+      <tr>
+        <td><strong>Nome / Razão Social:</strong> Consumidor Final (Simulação)</td>
+        <td><strong>CPF/CNPJ:</strong> 999.999.999-99</td>
+      </tr>
+      <tr>
+        <td colspan="2"><strong>Data de Emissão:</strong> 28/10/2026</td>
+      </tr>
+    </table>
+
+    <h3>PRODUTOS E SERVIÇOS</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Cód.</th>
+          <th>Descrição do Produto</th>
+          <th>Qtd.</th>
+          <th>Vlr. Unitário (R$)</th>
+          <th>Vlr. Total (R$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HT-001</td>
+          <td>PC Gamer T-Moba (Ryzen 5 5600G, 16GB, SSD 480GB)</td>
+          <td>1</td>
+          <td>2.499,00</td>
+          <td>2.499,00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="totais-nf">
+      VALOR TOTAL DA NOTA: R$ 2.499,00
+    </div>
+    
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="inicio.html" style="color: blue; text-decoration: underline;">Voltar para o Início do Site</a>
+    </div>
+  </div>
+
+</body>
+</html>

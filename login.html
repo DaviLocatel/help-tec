@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Help-Tec</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Padrão (Sem botões extras) -->
+  <nav class="navbar">
+    <a href="inicio.html" class="logo-link"><img src="logo.png" alt="Logo Help-Tec" class="logo-img"></a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">☰</label>
+    <div class="menu-colapsavel">
+      <div class="navegacao-setas">
+        <ul class="menu-lista">
+          <li><a href="inicio.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="equipe.html">Sobre a Equipe</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-principal" style="align-items: center; justify-content: center;">
+    <article class="card form-centralizado">
+      <h2 style="text-align: center;">Área do Cliente</h2>
+      
+      <form action="#" class="form-estilizado">
+        <label>E-mail:</label>
+        <input type="email" placeholder="seu@email.com" required>
+        
+        <label>Senha:</label>
+        <input type="password" placeholder="••••••••" required>
+        
+        <a href="inicio.html" class="btn-comprar" style="margin-top: 24px;">Entrar</a>
+      </form>
+
+      <!-- Links Extras -->
+      <div class="links-form">
+        <p>Não tem conta? <a href="cadastro.html" class="link-destaque">Criar conta</a></p>
+        <p><a href="login-func.html" class="link-discreto">Entrar como funcionário</a></p>
+      </div>
+    </article>
+  </main>
+  
+  <footer style="margin-top: auto;"><p>&copy; 2026 Help-Tec.</p></footer>
+</body>
+</html>
