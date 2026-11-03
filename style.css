@@ -205,3 +205,37 @@ footer p { font-size: 0.75rem; color: var(--cor-principal-clara); margin-bottom:
   text-decoration: underline;
 }
 .link-discreto:hover { color: var(--cor-destaque); }
+
+.suporte { max-width: 720px; margin: 0 auto; padding: 24px 16px; }
+.suporte h1, .suporte p { text-align: center; }
+.suporte p { margin-bottom: var(--espaco-4); }
+.suporte h2 { margin-top: 32px; color: var(--cor-destaque); font-size: var(--titulo-h3); }
+
+.suporte details {
+  background-color: var(--cor-superficie);
+  border: 2px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--sombra-suave);
+}
+
+.suporte summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none; /* Remove o triângulo feio padrão do navegador */
+  color: var(--cor-escura);
+}
+
+/* Seta customizada que gira */
+.suporte summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--cor-principal);
+  transition: transform 0.2s ease;
+}
+
+.suporte details[open] summary::before { transform: rotate(90deg); }
+.suporte details ol { margin: 12px 0 4px 24px; color: var(--cor-texto-sec); }
+.suporte details li { margin-bottom: 6px; }
