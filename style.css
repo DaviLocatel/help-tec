@@ -65,7 +65,7 @@ nav.navbar {
   margin: var(--espaco-3) auto 0;
   width: calc(100% - 48px);
   max-width: 1200px;
-  overflow: hidden; /* Garante que nada vaze das bordas arredondadas */
+  overflow: hidden; /* Mantém tudo estritamente dentro da pílula */
 }
 
 .logo-link {
@@ -86,6 +86,13 @@ nav.navbar {
   flex: 1;
   margin-left: var(--espaco-2);
   min-width: 0;
+  overflow-x: auto; /* Permite arrastar/rolar suavemente se a tela for menor que os itens */
+}
+
+/* Esconde a barra de rolagem visualmente mantendo a funcionalidade de arrastar */
+.menu-colapsavel::-webkit-scrollbar {
+  height: 0px;
+  background: transparent;
 }
 
 .navegacao-setas {
@@ -119,7 +126,7 @@ nav.navbar {
   color: var(--cor-destaque);
   border: 2px solid var(--cor-principal);
   border-radius: 999px;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   transition: all 0.25s ease;
 }
 
@@ -144,25 +151,6 @@ nav.navbar {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .btn-entrar:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(20, 90, 6, 0.4); color: white; }
-
-/* =======================================================
-   TELA DE TABLET / INTERMEDIÁRIA (De 901px até 1150px) - Nav Arrastável
-   ======================================================= */
-@media (min-width: 901px) and (max-width: 1150px) {
-  .menu-colapsavel {
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 4px;
-  }
-  /* Adiciona scroll horizontal suave para tablets sem quebrar o layout */
-  .menu-colapsavel::-webkit-scrollbar {
-    height: 4px;
-  }
-  .menu-colapsavel::-webkit-scrollbar-thumb {
-    background: var(--cor-principal);
-    border-radius: 4px;
-  }
-}
 
 /* =======================================================
    REGRAS MOBILE (Abaixo de 900px) - Menu Hambúrguer na Direita
@@ -584,4 +572,43 @@ footer p { font-size: 0.75rem; color: var(--cor-principal-clara); margin-bottom:
 
 .btn-enviar-chat:hover {
   transform: scale(1.04);
+}
+
+/* =======================================================
+   MASCOTE FLUTUANTE NO CANTO DE TODAS AS PÁGINAS
+   ======================================================= */
+.mascote-canto {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 110px;
+  height: auto;
+  z-index: 999;
+  cursor: pointer;
+  background-color: transparent;
+  filter: 
+    drop-shadow(2px 0 0 var(--cor-neon)) 
+    drop-shadow(-2px 0 0 var(--cor-neon)) 
+    drop-shadow(0 2px 0 var(--cor-neon)) 
+    drop-shadow(0 -2px 0 var(--cor-neon)) 
+    drop-shadow(0 8px 16px rgba(34, 197, 94, 0.6));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.mascote-canto:hover {
+  transform: scale(1.1) translateY(-4px);
+  filter: 
+    drop-shadow(2px 0 0 var(--cor-neon)) 
+    drop-shadow(-2px 0 0 var(--cor-neon)) 
+    drop-shadow(0 2px 0 var(--cor-neon)) 
+    drop-shadow(0 -2px 0 var(--cor-neon)) 
+    drop-shadow(0 12px 24px rgba(34, 197, 94, 0.95));
+}
+
+@media (max-width: 900px) {
+  .mascote-canto {
+    width: 75px;
+    bottom: 12px;
+    right: 12px;
+  }
 }
