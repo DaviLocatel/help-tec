@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suporte - Help-Tec</title>
+  <title>Suporte e Chat IA - Help-Tec</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,55 +19,181 @@
           <li><a href="produtos.html">Produtos</a></li>
           <li><a href="recursos.html">Recursos</a></li>
           <li><a href="servicos.html">Serviços</a></li>
-          <li><a href="suporte.html" class="ativo">Suporte</a></li>
-          <li><a href="servicos.html">Serviços</a></li>
           <li><a href="equipe.html">Sobre a Equipe</a></li>
+          <li><a href="suporte.html" class="ativo">Suporte</a></li>
         </ul>
       </div>
       <a href="login.html" class="btn-entrar">Entrar</a>
     </div>
   </nav>
 
-  <main class="container-principal suporte">
-    <h1>Como usar a Help-Tec</h1>
-    <p>Escolha a pergunta e clique para abrir o passo a passo.</p>
+  <main class="container-principal">
+    <div class="cabecalho-suporte">
+      <span class="tag-destaque">Central de Ajuda</span>
+      <h1>Atendimento & Suporte Técnico</h1>
+      <p>Tire suas dúvidas no manual rápido ao lado ou converse em tempo real com a nossa IA.</p>
+    </div>
 
-    <h2>Conta e Acesso</h2>
-    
-    <details>
-      <summary>Como eu crio uma conta de cliente?</summary>
-      <ol>
-        <li>Clique no botão <strong>Entrar</strong> no canto superior direito.</li>
-        <li>No final do cartão, clique no link <strong>Criar conta</strong>.</li>
-        <li>Preencha seu E-mail, CPF, Data de Nascimento e escolha sua Foto.</li>
-        <li>Clique em <strong>Finalizar Cadastro</strong>.</li>
-      </ol>
-    </details>
+    <div class="layout-suporte">
+      
+      <!-- COLUNA 1: Manual FAQ (Exigência da Apostila) -->
+      <section class="coluna-faq">
+        <h2>Perguntas Frequentes (Manual)</h2>
+        
+        <h3>Conta e Acesso</h3>
+        <details>
+          <summary>Como eu crio uma conta de cliente?</summary>
+          <ol>
+            <li>Clique no botão <strong>Entrar</strong> no canto superior direito.</li>
+            <li>No final do cartão, clique no link <strong>Criar conta</strong>.</li>
+            <li>Preencha seu E-mail, CPF, Data de Nascimento e escolha sua Foto.</li>
+            <li>Clique em <strong>Finalizar Cadastro</strong>.</li>
+          </ol>
+        </details>
 
-    <details>
-      <summary>Como eu acesso o sistema de funcionário?</summary>
-      <ol>
-        <li>Clique no botão <strong>Entrar</strong> no topo da página.</li>
-        <li>Clique no link <strong>Entrar como funcionário</strong>.</li>
-        <li>Insira o seu ID corporativo e a senha.</li>
-        <li>Clique em <strong>Acessar Sistema</strong>.</li>
-      </ol>
-    </details>
+        <details>
+          <summary>Como eu acesso o sistema de funcionário?</summary>
+          <ol>
+            <li>Clique no botão <strong>Entrar</strong> no topo da página.</li>
+            <li>Clique no link <strong>Entrar como funcionário</strong>.</li>
+            <li>Insira o seu ID corporativo e a senha.</li>
+            <li>Clique em <strong>Acessar Sistema</strong>.</li>
+          </ol>
+        </details>
 
-    <h2>Compras e Loja</h2>
-    
-    <details>
-      <summary>Como comprar um computador ou peça?</summary>
-      <ol>
-        <li>No menu superior, clique em <strong>Produtos</strong>.</li>
-        <li>Escolha o item desejado e clique em <strong>Ver Detalhes</strong>.</li>
-        <li>Clique em <strong>Comprar Agora</strong> para simular a geração da Nota Fiscal.</li>
-      </ol>
-    </details>
+        <h3>Compras e Loja</h3>
+        <details>
+          <summary>Como comprar um computador ou peça?</summary>
+          <ol>
+            <li>No menu superior, clique em <strong>Produtos</strong>.</li>
+            <li>Escolha o item desejado e clique em <strong>Ver Detalhes</strong>.</li>
+            <li>Clique em <strong>Comprar Agora</strong> para gerar a Nota Fiscal (DANFE).</li>
+          </ol>
+        </details>
+
+        <details>
+          <summary>Como funciona o carrinho de compras?</summary>
+          <ol>
+            <li>Na vitrine de <strong>Produtos</strong>, clique em <strong>🛒 Carrinho</strong> no item desejado.</li>
+            <li>Confira a quantidade, o subtotal e o valor total a pagar.</li>
+            <li>Clique em <strong>Finalizar Pedido</strong> para emitir sua nota fiscal.</li>
+          </ol>
+        </details>
+      </section>
+
+      <!-- COLUNA 2: Chat IA Interativo -->
+      <section class="coluna-chat">
+        <div class="chat-card">
+          <div class="chat-topo">
+            <img src="mascote.png" alt="Mascote Help-Bot" class="chat-avatar">
+            <div>
+              <h3>Help-Bot IA</h3>
+              <span class="status-online">● Online agora</span>
+            </div>
+          </div>
+
+          <div class="chat-mensagens" id="chat-mensagens">
+            <div class="msg-bot">
+              Olá! Sou a inteligência artificial da <strong>Help-Tec</strong>. 🤖<br><br>
+              Qual serviço você gostaria de solicitar hoje? Digite o <strong>número</strong> da opção desejada:<br><br>
+              <strong>1</strong> - Manutenção em PC<br>
+              <strong>2</strong> - Acionar Garantia<br>
+              <strong>3</strong> - Falha na Compra / Pagamento<br>
+              <strong>4</strong> - Falha no Envio / Rastreio<br>
+              <strong>5</strong> - Orçamento de Setup Gamer<br>
+              <strong>6</strong> - Falar com um Atendente Humano
+            </div>
+          </div>
+
+          <!-- Botões de atalho rápido caso o usuário prefira clicar -->
+          <div class="chat-atalhos">
+            <button type="button" onclick="enviarOpcaoRapida('1')">1. Manutenção</button>
+            <button type="button" onclick="enviarOpcaoRapida('2')">2. Garantia</button>
+            <button type="button" onclick="enviarOpcaoRapida('3')">3. Compra</button>
+            <button type="button" onclick="enviarOpcaoRapida('4')">4. Envio</button>
+            <button type="button" onclick="enviarOpcaoRapida('5')">5. Orçamento</button>
+          </div>
+
+          <form class="chat-input-area" id="form-chat" onsubmit="processarMensagem(event)">
+            <input type="text" id="input-usuario" placeholder="Digite o número (1 a 6) ou sua dúvida..." autocomplete="off" required>
+            <button type="submit" class="btn-enviar-chat">Enviar</button>
+          </form>
+        </div>
+      </section>
+
+    </div>
   </main>
+
+  <a href="suporte.html" title="Precisa de ajuda? Fale com o Suporte!">
+    <img src="mascote.png" alt="Mascote Help-Tec" class="mascote-canto">
+  </a>
 
   <footer>
     <p>&copy; 2026 Help-Tec. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Motor de Inteligência Artificial Simulado -->
+  <script>
+    const chatMensagens = document.getElementById('chat-mensagens');
+    const inputUsuario = document.getElementById('input-usuario');
+
+    const respostasIA = {
+      '1': '🔧 <strong>Manutenção em PC:</strong> Realizamos limpeza completa, troca de pasta térmica, formatação e diagnóstico de peças. Traga seu equipamento até nossa loja em Vila Velha ou agende a coleta! Deseja mais alguma ajuda? (Digite <strong>0</strong> para ver o menu novamente).',
+      '2': '🛡️ <strong>Acionar Garantia:</strong> Todos os nossos computadores e peças possuem 1 ano de garantia direta. Tenha em mãos o número da sua DANFE (ex: Nº 000.001.024) e envie uma foto do defeito para garantia@helptec.com.br. (Digite <strong>0</strong> para voltar ao menu).',
+      '3': '💳 <strong>Falha na Compra:</strong> Se o seu pagamento via PIX ou Cartão não foi aprovado, verifique o limite do cartão ou aguarde 10 minutos para tentar novamente no carrinho. (Digite <strong>0</strong> para voltar ao menu).',
+      '4': '🚚 <strong>Falha no Envio / Rastreio:</strong> Nossas entregas na Grande Vitória levam até 24h úteis. Se o seu pedido atrasou, informe seu CPF que vamos rastrear com a transportadora imediatamente! (Digite <strong>0</strong> para voltar ao menu).',
+      '5': '💻 <strong>Orçamento de Setup:</strong> Temos desde o <em>PC Gamer T-Moba (R$ 2.499)</em> até a <em>Workstation PRO com RTX 4060 Ti (R$ 7.199)</em>! Acesse a aba <strong>Produtos</strong> no menu superior para ver as configurações. (Digite <strong>0</strong> para voltar ao menu).',
+      '6': '👨‍💻 <strong>Atendente Humano:</strong> Transferindo seu chamado para o desenvolvedor <strong>Davi Locatel</strong>... Aguarde um instante ou deixe seu telefone de contato abaixo!',
+      '0': '📋 Aqui está o menu principal novamente! Digite o número desejado:<br><strong>1</strong> - Manutenção em PC<br><strong>2</strong> - Acionar Garantia<br><strong>3</strong> - Falha na Compra<br><strong>4</strong> - Falha no Envio<br><strong>5</strong> - Orçamento de Setup<br><strong>6</strong> - Falar com Atendente'
+    };
+
+    function adicionarMensagem(texto, classe) {
+      const div = document.createElement('div');
+      div.className = classe;
+      div.innerHTML = texto;
+      chatMensagens.appendChild(div);
+      chatMensagens.scrollTop = chatMensagens.scrollHeight;
+    }
+
+    function responderUsuario(textoOriginal) {
+      const texto = textoOriginal.trim().toLowerCase();
+      let resposta = '';
+
+      if (respostasIA[texto]) {
+        resposta = respostasIA[texto];
+      } else if (texto.includes('manutencao') || texto.includes('manutenção') || texto.includes('conserto')) {
+        resposta = respostasIA['1'];
+      } else if (texto.includes('garantia') || texto.includes('defeito')) {
+        resposta = respostasIA['2'];
+      } else if (texto.includes('compra') || texto.includes('pagamento') || texto.includes('cartao')) {
+        resposta = respostasIA['3'];
+      } else if (texto.includes('envio') || texto.includes('entrega') || texto.includes('frete')) {
+        resposta = respostasIA['4'];
+      } else if (texto.includes('orcamento') || texto.includes('orçamento') || texto.includes('pc')) {
+        resposta = respostasIA['5'];
+      } else {
+        resposta = '🤖 Não entendi muito bem. Por favor, digite apenas um número de <strong>1 a 6</strong> correspondente ao serviço desejado (ou digite <strong>0</strong> para rever as opções).';
+      }
+
+      setTimeout(() => {
+        adicionarMensagem(resposta, 'msg-bot');
+      }, 450);
+    }
+
+    function processarMensagem(event) {
+      event.preventDefault();
+      const texto = inputUsuario.value;
+      if (!texto.trim()) return;
+
+      adicionarMensagem(texto, 'msg-user');
+      inputUsuario.value = '';
+      responderUsuario(texto);
+    }
+
+    function enviarOpcaoRapida(numero) {
+      adicionarMensagem(numero, 'msg-user');
+      responderUsuario(numero);
+    }
+  </script>
 </body>
 </html>
