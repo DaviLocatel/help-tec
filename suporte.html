@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suporte e Celeste IA - Help-Tec</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="hp.png" alt="Logo Help-Tec" class="logo-img">
+        <span class="logo-texto">Help-Tec</span>
+      </a>
+
+      <button type="button" id="btn-menu" class="menu-btn" aria-label="Abrir Menu">☰</button>
+
+      <div id="menu-colapsavel" class="menu-colapsavel">
+        <ul class="menu-lista">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Catálogo</a></li>
+          <li><a href="equipe.html">Sobre a Equipe</a></li>
+          <li><a href="suporte.html" class="ativo">Suporte</a></li>
+          <li><button type="button" id="btn-abrir-carrinho" class="btn-carrinho-nav">🛒 Carrinho (<span id="contador-carrinho">0</span>)</button></li>
+        </ul>
+
+        <div class="painel-usuario-nav">
+          <img src="usuario.jpg" alt="Avatar do Usuário" class="avatar-mini">
+          <div class="info-usuario-nav">
+            <span id="nav-nome-usuario" class="nome-usuario-nav">Visitante</span>
+            <span id="nav-status-usuario" class="status-usuario-nav">Sem Conta</span>
+          </div>
+          <button type="button" id="btn-abrir-usuario" class="btn-entrar">Login</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-principal">
+    <div class="topo-pagina">
+      <span class="tag-destaque">Central de Ajuda & Controle</span>
+      <h1>Atendimento & Celeste IA</h1>
+      <p>Tire as suas dúvidas com a Celeste IA integrada ao sistema em tempo real.</p>
+    </div>
+
+    <div class="layout-aplicacao">
+      <section class="card painel-formulario">
+        <h2 id="titulo-painel-manual">📚 Manual Rápido (FAQ)</h2>
+        
+        <div id="manual-cliente">
+          <div style="margin-bottom: 20px;">
+            <h3 style="font-size: 16px;">Contas e Atendimento Humano</h3>
+            <details style="margin-bottom: 12px; background: var(--cor-fundo); padding: 10px; border-radius: 8px;">
+              <summary style="font-weight: bold; cursor: pointer; color: var(--cor-texto-suave);">Como falar com um atendente humano?</summary>
+              <p style="margin-top: 8px; font-size: 14px; color: var(--cor-texto);">Você precisa estar <strong>logado na sua conta</strong>. Depois, basta pedir para "falar com um atendente" no chat da Celeste que um funcionário receberá uma notificação ao vivo.</p>
+            </details>
+            <details style="margin-bottom: 12px; background: var(--cor-fundo); padding: 10px; border-radius: 8px;">
+              <summary style="font-weight: bold; cursor: pointer; color: var(--cor-texto-suave);">A Celeste sabe os preços atualizados?</summary>
+              <p style="margin-top: 8px; font-size: 14px; color: var(--cor-texto);">Sim! A Celeste lê o banco de produtos em tempo real e informa o valor atualizado na hora.</p>
+            </details>
+          </div>
+
+          <div>
+            <h3 style="font-size: 16px;">Catálogo e Nota Fiscal (DANFE)</h3>
+            <details style="margin-bottom: 12px; background: var(--cor-fundo); padding: 10px; border-radius: 8px;">
+              <summary style="font-weight: bold; cursor: pointer; color: var(--cor-texto-suave);">Como emitir minha Nota Fiscal?</summary>
+              <p style="margin-top: 8px; font-size: 14px; color: var(--cor-texto);">Adicione os produtos no Catálogo, abra o botão <strong>Carrinho</strong> no menu superior e clique em <strong>Finalizar Pedido</strong> para gerar sua DANFE na tela.</p>
+            </details>
+          </div>
+        </div>
+
+        <div id="manual-ceo" class="escondido">
+          <div style="margin-bottom: 20px;">
+            <h3 style="font-size: 16px;">Comandos Globais do CEO na Celeste</h3>
+            <details style="margin-bottom: 12px; background: var(--cor-fundo); padding: 10px; border-radius: 8px;" open>
+              <summary style="font-weight: bold; cursor: pointer; color: var(--cor-texto-suave);">O que o CEO pode mandar a Celeste alterar?</summary>
+              <p style="margin-top: 8px; font-size: 13px; color: var(--cor-texto); line-height: 1.6;">
+                • <strong>Preços em lote:</strong> <em>"adicione preço nos seguintes produtos: PC Gamer T-Moba (HT-101): R$ 2.499,00..."</em><br>
+                • <strong>Restaurar catálogo original:</strong> <em>"restaurar preços de fábrica"</em><br>
+                • <strong>Descontos:</strong> <em>"aplicar desconto de 15%"</em> ou <em>"remover descontos"</em><br>
+                • <strong>Mudar cor de todo o site:</strong> <em>"mudar cor do site para roxo"</em> (ou azul, vermelho, dourado, verde)<br>
+                • <strong>Alterar textos do Início:</strong> <em>"mudar título do início para: A Maior Loja Gamer"</em><br>
+                • <strong>Alterar nome da empresa:</strong> <em>"mudar nome da empresa para: Davi-Tec"</em><br>
+                • <strong>Criar aviso global no topo:</strong> <em>"criar aviso: Black Friday Liberada!"</em> ou <em>"remover aviso"</em><br>
+                • <strong>Editar card Sobre a Equipe:</strong> <em>"mudar frase da equipe para: Eu domino o código"</em> ou <em>"mudar cargo da equipe para: CEO Supremo"</em>
+              </p>
+            </details>
+          </div>
+        </div>
+
+        <div id="painel-diagnostico" class="escondido" style="padding-top: 12px; border-top: 1px solid var(--cor-borda);">
+          <h3 style="font-size: 16px;">🛠️ Diagnóstico</h3>
+          <p id="saida" style="font-size: 14px; margin-bottom: 8px; color: var(--cor-texto);">Clique em um botão para testar o leitor de JSON do sistema:</p>
+          <p id="carregando" hidden style="color: var(--cor-neon); font-weight: bold; font-size: 13px; margin-bottom: 8px;">Carregando…</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <button type="button" id="btn-ok" class="btn-entrar">Carregar dados corretos</button>
+            <button type="button" id="btn-erro" class="btn-remover" style="margin-top: 0;">Carregar dados quebrados</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card painel-acoes" style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--cor-borda);">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="hp.png" alt="Celeste IA" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--cor-neon);">
+            <div>
+              <h2 style="margin: 0; font-size: 18px;">Celeste IA & Suporte</h2>
+              <span id="status-chat-cliente" style="font-size: 12px; color: var(--cor-primaria); font-weight: bold;">● Celeste Online</span>
+            </div>
+          </div>
+          <button type="button" id="btn-encerrar-chamado-cliente" class="btn-remover escondido" style="margin-top: 0; padding: 6px 10px; font-size: 12px;">Encerrar Atendimento</button>
+        </div>
+
+        <div id="chat-mensagens" class="mensagens-container"></div>
+        <p id="carregando-celeste" hidden style="color: var(--cor-neon); font-size: 12px; font-weight: bold; margin-bottom: 8px;">✨ Celeste processando comando no sistema…</p>
+
+        <div id="atalhos-chat-celeste" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+          <button type="button" id="btn-atalho-estoque" class="btn-carrinho" style="font-size: 12px; padding: 6px 10px;" onclick="enviarOpcaoChat('Mostrar todo o estoque e preços')">Ver Estoque e Preços</button>
+          <button type="button" id="btn-atalho-garantia" class="btn-carrinho" style="font-size: 12px; padding: 6px 10px;" onclick="enviarOpcaoChat('Meu produto deu defeito, como aciono a garantia?')">Acionar Garantia</button>
+          <button type="button" id="btn-atalho-danfe" class="btn-carrinho" style="font-size: 12px; padding: 6px 10px;" onclick="enviarOpcaoChat('Como emitir minha nota fiscal DANFE?')">Dúvida sobre DANFE</button>
+          <button type="button" id="btn-atalho-humano" class="btn-carrinho" style="font-size: 12px; padding: 6px 10px;" onclick="enviarOpcaoChat('Quero falar com um atendente humano')">Falar com Funcionário</button>
+          <button type="button" id="btn-atalho-restaurar-ceo" class="btn-carrinho escondido" style="font-size: 12px; padding: 6px 10px; border-color: #a855f7; color: #c084fc;" onclick="enviarOpcaoChat('Restaurar preços de fábrica')">👑 Restaurar Preços Padrão</button>
+          <button type="button" id="btn-atalho-desconto-ceo" class="btn-carrinho escondido" style="font-size: 12px; padding: 6px 10px; border-color: #a855f7; color: #c084fc;" onclick="enviarOpcaoChat('Aplicar desconto de 15%')">👑 Aplicar Desconto 15%</button>
+        </div>
+
+        <form id="form-chat" style="display: flex; gap: 8px;">
+          <input type="text" id="input-chat-usuario" placeholder="Fale com a Celeste..." autocomplete="off" style="flex: 1; padding: 12px;" required>
+          <button type="submit" id="btn-enviar-chat" class="btn-primario" style="width: auto; padding: 12px 20px;">Enviar</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <div id="modal-carrinho" class="fundo-modal">
+    <div class="modal-conteudo card form-centralizado-largo">
+      <button type="button" id="btn-fechar-carrinho" class="btn-fechar">X</button>
+      <h2>🛒 Seu Carrinho</h2>
+      <div class="tabela-container">
+        <table class="tabela-carrinho">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Preço</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela-carrinho"></tbody>
+        </table>
+      </div>
+      <div class="carrinho-total">Total: <span id="total-carrinho-modal">R$ 0,00</span></div>
+      <div class="acoes-direita">
+        <button type="button" id="btn-esvaziar-carrinho" class="btn-remover">Esvaziar</button>
+        <button type="button" id="btn-finalizar-compra" class="btn-primario" style="width: auto;">Finalizar Pedido</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-usuario" class="fundo-modal">
+    <div class="modal-conteudo card">
+      <button type="button" id="btn-fechar-modal" class="btn-fechar">X</button>
+
+      <div id="tela-login-modal">
+        <h2>Acesso Help-Tec</h2>
+        <form id="form-login-modal" novalidate>
+          <div class="campo-grupo">
+            <label for="modal-login-nome">Seu Nome</label>
+            <input type="text" id="modal-login-nome" placeholder="Ex: Davi Locatel">
+            <span class="erro" id="erro-modal-login-nome"></span>
+          </div>
+          <div class="campo-grupo">
+            <label for="modal-login-email">E-mail</label>
+            <input type="email" id="modal-login-email" placeholder="nome@email.com">
+            <span class="erro" id="erro-modal-login-email"></span>
+          </div>
+          <div class="campo-grupo">
+            <label for="modal-login-senha">Senha</label>
+            <input type="password" id="modal-login-senha" placeholder="Mínimo 6 caracteres">
+            <span class="erro" id="erro-modal-login-senha"></span>
+          </div>
+          <div class="links-modal-login" style="margin-top: 6px;">
+            <a href="cadastro.html" class="link-modal-cadastro">Não tem conta? Cadastre-se já!</a>
+            <a href="#" id="link-dica-funcionario" class="link-modal-funcionario">É funcionário? Entre como funcionário</a>
+          </div>
+          <button type="submit" class="btn-primario" style="margin-top: 10px;">Entrar</button>
+        </form>
+      </div>
+
+      <div id="tela-perfil-modal" class="escondido">
+        <div class="perfil-cabecalho">
+          <img src="usuario.jpg" alt="Foto do Usuário" class="avatar-grande">
+          <h2 id="perfil-nome-exibicao">Davi Locatel</h2>
+          <span id="perfil-cargo-exibicao" class="tag-destaque">Cliente</span>
+        </div>
+        <div class="perfil-detalhes">
+          <p><strong>E-mail:</strong> <span id="perfil-email-exibicao"></span></p>
+          <p><strong>Status:</strong> Sessão Ativa</p>
+        </div>
+        
+        <form id="form-edicao-perfil" class="painel-edicao-perfil" style="margin-top: 12px; padding: 12px; background: var(--cor-fundo); border: 1px solid var(--cor-borda); border-radius: 8px; display: flex; flex-direction: column; gap: 8px;">
+          <strong style="color: var(--cor-neon); font-size: 13px;">⚙️ Personalizar Minha Conta</strong>
+          <div class="campo-grupo" style="margin-bottom: 4px;">
+            <label for="edit-perfil-nome" style="font-size: 12px;">Nome</label>
+            <input type="text" id="edit-perfil-nome" placeholder="Seu nome" style="padding: 8px; font-size: 13px;">
+          </div>
+          <div class="campo-grupo" style="margin-bottom: 4px;">
+            <label for="edit-perfil-email" style="font-size: 12px;">E-mail</label>
+            <input type="email" id="edit-perfil-email" placeholder="seu@email.com" style="padding: 8px; font-size: 13px;">
+          </div>
+          <div class="campo-grupo" style="margin-bottom: 4px;">
+            <label for="edit-perfil-senha" style="font-size: 12px;">Nova Senha (opcional)</label>
+            <input type="password" id="edit-perfil-senha" placeholder="Deixe vazio para manter" style="padding: 8px; font-size: 13px;">
+          </div>
+          <div class="campo-grupo" style="margin-bottom: 4px;">
+            <label for="edit-perfil-foto-url" style="font-size: 12px;">Foto (nome do arquivo ou URL)</label>
+            <input type="text" id="edit-perfil-foto-url" placeholder="Ex: davi.jpg ou usuario.jpg" style="padding: 8px; font-size: 13px;">
+          </div>
+          <button type="submit" class="btn-primario" style="padding: 8px; font-size: 13px;">Salvar Alterações</button>
+          <p id="aviso-perfil-salvo" class="aviso-sucesso" style="font-size: 12px; margin-top: 2px; min-height: 16px;"></p>
+        </form>
+
+        <button type="button" id="btn-sair-conta" class="btn-remover">Sair da Conta</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="rodape">
+    <p>&copy; 2026 Help-Tec. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const tituloPainelManual = buscarElemento('#titulo-painel-manual');
+    const manualCliente = buscarElemento('#manual-cliente');
+    const manualCeo = buscarElemento('#manual-ceo');
+    const painelDiagnostico = buscarElemento('#painel-diagnostico');
+
+    const btnAtalhoEstoque = buscarElemento('#btn-atalho-estoque');
+    const btnAtalhoGarantia = buscarElemento('#btn-atalho-garantia');
+    const btnAtalhoDanfe = buscarElemento('#btn-atalho-danfe');
+    const btnAtalhoHumano = buscarElemento('#btn-atalho-humano');
+    const btnAtalhoRestaurarCeo = buscarElemento('#btn-atalho-restaurar-ceo');
+    const btnAtalhoDescontoCeo = buscarElemento('#btn-atalho-desconto-ceo');
+
+    const saida = buscarElemento('#saida');
+    const carregando = buscarElemento('#carregando');
+    const btnOk = buscarElemento('#btn-ok');
+    const btnErro = buscarElemento('#btn-erro');
+
+    function carregar(textoRecebido) {
+      carregando.hidden = false;
+      try {
+        const dados = JSON.parse(textoRecebido);
+        saida.textContent = `Olá, ${dados.nome}! Diagnóstico JSON carregado com sucesso.`;
+        saida.style.color = 'var(--cor-neon)';
+      } catch (erro) {
+        console.error('Falha ao ler os dados:', erro.message);
+        saida.textContent = 'Não conseguimos carregar os dados. Tente de novo.';
+        saida.style.color = 'var(--cor-erro)';
+      } finally {
+        carregando.hidden = true;
+      }
+    }
+
+    btnOk.addEventListener('click', () => carregar('{"nome": "Davi Locatel (CEO)"}'));
+    btnErro.addEventListener('click', () => carregar('{nome: Davi Quebrado}'));
+
+    const boxChat = buscarElemento('#chat-mensagens');
+    const inputChat = buscarElemento('#input-chat-usuario');
+    const btnEnviarChat = buscarElemento('#btn-enviar-chat');
+    const atalhosChat = buscarElemento('#atalhos-chat-celeste');
+    const formChat = buscarElemento('#form-chat');
+    const statusChatCliente = buscarElemento('#status-chat-cliente');
+    const btnEncerrarChamadoCliente = buscarElemento('#btn-encerrar-chamado-cliente');
+    const carregandoCeleste = buscarElemento('#carregando-celeste');
+
+    const palavrasAtendimentoHumano = ['atendente', 'humano', 'humanizado', 'pessoa', 'falar com', 'funcionário', 'funcionario', 'suporte humano'];
+    const palavrasProibidasNaoCeo = [
+      'restaurar preço',
+      'restaurar preco',
+      'preços de fábrica',
+      'precos de fabrica',
+      'preço padrão',
+      'preco padrao',
+      'aplicar desconto',
+      'remover desconto',
+      'tirar desconto',
+      'mudar preço',
+      'mudar preco',
+      'adicione preço',
+      'adicione preco',
+      'coloque este preço',
+      'mudar cor',
+      'cor do site',
+      'mudar título',
+      'mudar titulo',
+      'mudar nome da empresa',
+      'criar aviso',
+      'remover aviso',
+      'adicionar produto',
+      'cadastrar produto',
+      'remover produto'
+    ];
+
+    function obterChaveBuscaProduto(nomeProduto) {
+      const minusculo = nomeProduto.toLowerCase();
+      const posAbre = minusculo.indexOf('(ht-');
+      const posFecha = minusculo.indexOf(')', posAbre);
+      if (posAbre !== -1 && posFecha !== -1) {
+        return minusculo.slice(posAbre + 1, posFecha);
+      }
+      return minusculo.split(' ')[0];
+    }
+
+    function extrairNumeroDeTrecho(trecho) {
+      let coletando = false;
+      let bruto = '';
+      for (let i = 0; i < trecho.length; i++) {
+        const c = trecho[i];
+        const ehDigito = c >= '0' && c <= '9';
+        if (ehDigito) {
+          coletando = true;
+          bruto += c;
+        } else if (coletando && (c === '.' || c === ',')) {
+          bruto += c;
+        } else if (coletando) {
+          break;
+        }
+      }
+      if (bruto === '') return 0;
+      const limpo = bruto.replaceAll('.', '').replace(',', '.');
+      const numero = Number(limpo);
+      return isNaN(numero) ? 0 : numero;
+    }
+
+    const consultarEstoqueTempoReal = () => {
+      recarregarMemoria();
+      if (itens.length === 0) {
+        throw new Error('O estoque está vazio no momento.');
+      }
+
+      const totalFixo = itens.reduce((acc, i) => acc + Number(i.valorOriginal), 0);
+      const totalAtual = itens.reduce((acc, i) => acc + Number(i.valor), 0);
+      const mediaEstoque = calcularMediaValores(itens.map((i) => i.valor));
+
+      const linhasHtml = itens.map((item) => {
+        const infoFixo = item.valor < item.valorOriginal ? ` <small style="text-decoration:line-through; opacity:0.7;">(Fixo: ${formatarMoeda(item.valorOriginal)})</small>` : '';
+        return `• <strong>${item.nome}</strong>: <span style="color:var(--cor-neon);">${formatarMoeda(item.valor)}</span>${infoFixo}`;
+      }).join('<br>');
+
+      return `💻 <strong>Estoque Help-Tec Ao Vivo (${itens.length} itens):</strong><br><br>${linhasHtml}<br><br><strong>Total Fixo:</strong> ${formatarMoeda(totalFixo)} | <strong>Total Atual:</strong> ${formatarMoeda(totalAtual)}<br><strong>Média por Item:</strong> ${formatarMoeda(mediaEstoque)}`;
+    };
+
+    const executarComandoIrrestritoCeo = (textoLimpo, textoOriginal) => {
+      recarregarMemoria();
+
+      if (textoLimpo.includes('restaurar preço') || textoLimpo.includes('restaurar preco') || textoLimpo.includes('preços de fábrica') || textoLimpo.includes('precos de fabrica') || textoLimpo.includes('resetar catálogo') || textoLimpo.includes('resetar catalogo')) {
+        itens = JSON.parse(JSON.stringify(itensPadrao));
+        salvarMemoria();
+        return `👑 <strong>Ordem cumprida imediatamente, CEO Davi!</strong> Restaurei todos os 5 produtos para os valores originais de fábrica:<br><br>${consultarEstoqueTempoReal()}`;
+      }
+
+      if (textoLimpo.includes('preço') || textoLimpo.includes('preco') || textoLimpo.includes('valor') || textoLimpo.includes('coloque') || textoLimpo.includes('adicione preço')) {
+        let alterouPrecos = false;
+        let relatorioPrecos = '';
+
+        itens.forEach((item) => {
+          const searchKey = obterChaveBuscaProduto(item.nome);
+          const idx = textoLimpo.indexOf(searchKey);
+
+          if (idx !== -1) {
+            const trechoAposCodigo = textoOriginal.slice(idx + searchKey.length);
+            const valNum = extrairNumeroDeTrecho(trechoAposCodigo);
+
+            if (valNum > 0) {
+              item.valorOriginal = valNum;
+              item.valor = valNum;
+              alterouPrecos = true;
+              relatorioPrecos += `• <strong>${item.nome}</strong>: <span style="color:var(--cor-neon);">${formatarMoeda(valNum)}</span><br>`;
+            }
+          }
+        });
+
+        if (alterouPrecos) {
+          salvarMemoria();
+          return `👑 <strong>Ordens executadas com sucesso, CEO!</strong> Atualizei o banco de dados de produtos em todo o site:<br><br>${relatorioPrecos}`;
+        }
+      }
+
+      if (textoLimpo.includes('remover desconto') || textoLimpo.includes('tirar desconto')) {
+        itens = itens.map((i) => ({ ...i, valor: i.valorOriginal }));
+        salvarMemoria();
+        return '👑 <strong>Sim, CEO!</strong> Todos os descontos foram removidos e os preços fixos voltaram ao normal em todas as abas.';
+      }
+
+      if (textoLimpo.includes('desconto')) {
+        const perc = extrairNumeroDeTrecho(textoLimpo);
+        if (perc > 0) {
+          const novosItens = itens.map((i) => ({
+            ...i,
+            valor: aplicarDescontoSeguro(i.valorOriginal, perc)
+          }));
+          itens = novosItens;
+          salvarMemoria();
+          return `👑 <strong>Imediatamente, CEO!</strong> Apliquei <strong>${perc}% de desconto</strong> em todo o catálogo da Help-Tec!`;
+        }
+      }
+
+      if (textoLimpo.includes('adicionar produto') || textoLimpo.includes('cadastrar produto') || textoLimpo.includes('criar produto')) {
+        let categoriaNova = 'perifericos';
+        if (textoLimpo.includes('computador') || textoLimpo.includes('pc ')) categoriaNova = 'computadores';
+        if (textoLimpo.includes('hardware') || textoLimpo.includes('kit ') || textoLimpo.includes('peça')) categoriaNova = 'hardware';
+
+        let nomeNovo = `Equipamento Especial CEO (HT-${Math.floor(600 + Math.random() * 399)})`;
+        const posProduto = textoLimpo.indexOf('produto ');
+        const posMoeda = textoLimpo.indexOf('r$');
+        if (posProduto !== -1 && posMoeda !== -1 && posMoeda > posProduto) {
+          const recorteNome = textoOriginal.slice(posProduto + 8, posMoeda).replace('por', '').trim();
+          if (recorteNome.length >= 3) {
+            nomeNovo = recorteNome;
+          }
+        }
+
+        const trechoPreco = posMoeda !== -1 ? textoOriginal.slice(posMoeda) : textoOriginal;
+        const valorExtraido = extrairNumeroDeTrecho(trechoPreco);
+        const valorNovo = valorExtraido > 0 ? valorExtraido : 1500;
+
+        itens.push({ id: Date.now(), nome: nomeNovo, categoria: categoriaNova, valorOriginal: valorNovo, valor: valorNovo });
+        salvarMemoria();
+        return `👑 <strong>Feito na hora, CEO!</strong> Cadastrei o produto <strong>${nomeNovo}</strong> por <strong>${formatarMoeda(valorNovo)}</strong> no arquivo de Catálogo!`;
+      }
+
+      if (textoLimpo.includes('remover produto') || textoLimpo.includes('apagar produto') || textoLimpo.includes('deletar produto')) {
+        const qtdAntes = itens.length;
+        itens = itens.filter((item) => {
+          const chave = obterChaveBuscaProduto(item.nome);
+          return !textoLimpo.includes(chave);
+        });
+        if (itens.length < qtdAntes) {
+          salvarMemoria();
+          return '👑 <strong>Ordem cumprida, CEO!</strong> O produto solicitado foi removido imediatamente do sistema.';
+        }
+      }
+
+      if (textoLimpo.includes('cor do site') || textoLimpo.includes('mudar cor') || textoLimpo.includes('tema do site')) {
+        if (textoLimpo.includes('roxo')) {
+          configSite.corPrimaria = '#9333ea';
+          configSite.corNeon = '#c084fc';
+          configSite.corFundo = '#0f0718';
+        } else if (textoLimpo.includes('azul')) {
+          configSite.corPrimaria = '#2563eb';
+          configSite.corNeon = '#60a5fa';
+          configSite.corFundo = '#060d1a';
+        } else if (textoLimpo.includes('vermelho')) {
+          configSite.corPrimaria = '#dc2626';
+          configSite.corNeon = '#f87171';
+          configSite.corFundo = '#180606';
+        } else if (textoLimpo.includes('dourado') || textoLimpo.includes('amarelo')) {
+          configSite.corPrimaria = '#d97706';
+          configSite.corNeon = '#fbbf24';
+          configSite.corFundo = '#171205';
+        } else {
+          configSite.corPrimaria = '';
+          configSite.corNeon = '';
+          configSite.corFundo = '';
+        }
+        salvarMemoria();
+        aplicarConfiguracoesGlobaisDoCeo();
+        return '👑 <strong>Visual alterado em todos os arquivos, CEO!</strong> Modifiquei as variáveis globais de estilo do site conforme sua ordem.';
+      }
+
+      if (textoLimpo.includes('nome da empresa') || textoLimpo.includes('renomear empresa') || textoLimpo.includes('mudar logo')) {
+        const partes = textoOriginal.split(':');
+        const novoNome = partes.length > 1 ? partes[1].trim() : '';
+        if (novoNome) {
+          configSite.nomeEmpresa = novoNome;
+          salvarMemoria();
+          aplicarConfiguracoesGlobaisDoCeo();
+          return `👑 <strong>Ordem executada em todas as páginas!</strong> A barra de navegação de todo o sistema agora exibe o nome <strong>${novoNome}</strong>.`;
+        }
+      }
+
+      if (textoLimpo.includes('título do início') || textoLimpo.includes('titulo do inicio') || textoLimpo.includes('texto do início') || textoLimpo.includes('texto do inicio')) {
+        const partes = textoOriginal.split(':');
+        const novoTitulo = partes.length > 1 ? partes.slice(1).join(':').trim() : '';
+        if (novoTitulo) {
+          if (textoLimpo.includes('texto')) {
+            configSite.textoInicio = novoTitulo;
+          } else {
+            configSite.tituloInicio = novoTitulo;
+          }
+          salvarMemoria();
+          aplicarConfiguracoesGlobaisDoCeo();
+          return `👑 <strong>Arquivo index.html atualizado, CEO!</strong> O novo destaque da página inicial já está ativo: <em>"${novoTitulo}"</em>.`;
+        }
+      }
+
+      if (textoLimpo.includes('criar aviso') || textoLimpo.includes('aviso no site') || textoLimpo.includes('alerta no site')) {
+        const partes = textoOriginal.split(':');
+        const msgAviso = partes.length > 1 ? partes.slice(1).join(':').trim() : textoOriginal;
+        configSite.avisoGlobal = msgAviso;
+        salvarMemoria();
+        aplicarConfiguracoesGlobaisDoCeo();
+        return `👑 <strong>Comunicado Global Publicado!</strong> Todas as páginas da Help-Tec agora exibem o seu banner no topo: <em>"${msgAviso}"</em>.`;
+      }
+
+      if (textoLimpo.includes('remover aviso') || textoLimpo.includes('apagar aviso')) {
+        configSite.avisoGlobal = '';
+        salvarMemoria();
+        aplicarConfiguracoesGlobaisDoCeo();
+        return '👑 <strong>Sim, CEO!</strong> O banner de comunicado global foi removido de todas as páginas.';
+      }
+
+      if (textoLimpo.includes('frase da equipe') || textoLimpo.includes('frase do davi') || textoLimpo.includes('cargo da equipe') || textoLimpo.includes('cargo do davi') || textoLimpo.includes('recado da equipe')) {
+        const partes = textoOriginal.split(':');
+        const novoConteudo = partes.length > 1 ? partes.slice(1).join(':').trim() : '';
+        if (novoConteudo && dadosEquipe.davi) {
+          if (textoLimpo.includes('cargo')) {
+            dadosEquipe.davi.cargo = novoConteudo;
+          } else if (textoLimpo.includes('recado')) {
+            dadosEquipe.davi.recado = novoConteudo;
+          } else {
+            dadosEquipe.davi.frase = `"${novoConteudo.replaceAll('"', '')}"`;
+          }
+          salvarMemoria();
+          return `👑 <strong>Arquivo equipe.html atualizado na hora, CEO!</strong> O seu card na aba Sobre a Equipe já foi modificado para: <em>${novoConteudo}</em>.`;
+        }
+      }
+
+      if (textoLimpo.includes('atendimento') || textoLimpo.includes('pendente') || textoLimpo.includes('chamado') || textoLimpo.includes('fila')) {
+        if (textoLimpo.includes('limpar') || textoLimpo.includes('encerrar todos') || textoLimpo.includes('fechar todos')) {
+          chamadosSuporte = [];
+          salvarMemoria();
+          atualizarNotificacoesFuncionario();
+          return '👑 <strong>Ordem cumprida, CEO!</strong> Todos os chamados da Central de Atendimentos foram encerrados e limpos.';
+        }
+        const abertos = chamadosSuporte.filter((c) => c.status === 'aberto');
+        if (abertos.length === 0) return '👑 <strong>Relatório CEO:</strong> Não há nenhum atendimento pendente na fila no momento! ✨';
+        const listaClientes = abertos.map((c) => `• <strong>${c.clienteNome}</strong> (${c.clienteEmail})`).join('<br>');
+        return `👑 <strong>Relatório CEO:</strong> Temos <strong>${abertos.length} atendimento(s) aberto(s)</strong> agora:<br><br>${listaClientes}<br><br><a href="atendimentos.html" class="btn-entrar" style="display:inline-block; margin-top:6px;">🎧 Abrir Central de Atendimentos</a>`;
+      }
+
+      if (textoLimpo.includes('estoque') || textoLimpo.includes('produtos')) {
+        return consultarEstoqueTempoReal();
+      }
+
+      return `👑 <strong>Sim, CEO ${sessaoAtual.nome}!</strong> Sua ordem <em>"${textoOriginal}"</em> foi registrada e acatada com prioridade total pelos servidores da Help-Tec! Estou 100% à disposição do seu comando administrativo.`;
+    };
+
+    const regrasClienteSuporte = [
+      {
+        palavras: ['quem é você', 'quem e voce', 'seu nome', 'quem és tu', 'o que voce faz', 'celeste'],
+        resposta: '✨ Eu sou a <strong>Celeste</strong>! Sou a Inteligência Artificial da Help-Tec, conectada ao estoque ao vivo e à central de atendimentos.'
+      },
+      {
+        palavras: ['piada', 'engraçado', 'rir', 'brincadeira'],
+        resposta: 'Por que o programador precisava de óculos? Porque ele não conseguia ler em C#! 🤓✨'
+      },
+      {
+        palavras: ['danfe', 'nota fiscal', 'recibo'],
+        resposta: '📄 Para emitir sua <strong>DANFE (Nota Fiscal)</strong>, adicione os itens no Catálogo, abra o <strong>Carrinho</strong> no topo e clique em <strong>Finalizar Pedido</strong>!'
+      },
+      {
+        palavras: ['carrinho', 'adicionar', 'pagar', 'remover', 'pedido', 'compra'],
+        resposta: '🛒 O carrinho de clientes fica salvo na memória! Ao clicar em "Finalizar Pedido", sua Nota Fiscal (DANFE) aparece pronta para impressão.'
+      },
+      {
+        palavras: ['garantia', 'quebrou', 'estragou', 'defeito', 'conserto', 'arrumar', 'assistência', 'problema'],
+        resposta: '🛡️ Nossos Computadores têm 1 ano de garantia e periféricos têm 6 meses. Se precisar de suporte técnico humano, basta me pedir!'
+      },
+      {
+        palavras: ['login', 'senha', 'entrar', 'conta', 'cadastro', 'cadastrar', 'esqueci', 'acessar', 'perfil', 'foto'],
+        resposta: '🔐 Clique em <strong>Meu Perfil</strong> no canto superior direito para personalizar seu Nome, E-mail, Senha e Foto de Perfil a qualquer momento!'
+      },
+      {
+        palavras: ['oi', 'olá', 'ola', 'bom dia', 'boa tarde', 'boa noite'],
+        resposta: '👋 Olá! Eu sou a Celeste ✨. Pode me perguntar sobre os produtos e preços em estoque ou pedir suporte!'
+      }
+    ];
+
+    const obterChamadoAtivoDoUsuario = () => {
+      recarregarMemoria();
+      if (sessaoAtual.papel !== 'cliente') return null;
+      return chamadosSuporte.find((ch) => ch.clienteEmail === sessaoAtual.email && ch.status === 'aberto');
+    };
+
+    const desenharBolha = (autor, nome, texto, hora) => {
+      const msgDiv = document.createElement('div');
+      if (autor === 'cliente') {
+        msgDiv.className = 'msg-bolha-func';
+        msgDiv.innerHTML = `<small style="display:block; opacity:0.8; font-size:11px;">Você (${nome}) · ${hora || ''}</small>${texto}`;
+      } else if (autor === 'funcionario') {
+        msgDiv.className = 'msg-bolha-cliente';
+        msgDiv.innerHTML = `<strong style="color:#fbbf24; display:block; font-size:12px;">🎧 Funcionário (${nome}) · ${hora || ''}</strong>${texto}`;
+      } else {
+        msgDiv.className = 'msg-bolha-celeste';
+        msgDiv.innerHTML = `<strong style="color:var(--cor-neon); display:block; font-size:12px;">✨ Celeste IA · ${hora || ''}</strong>${texto}`;
+      }
+      boxChat.appendChild(msgDiv);
+      boxChat.scrollTop = boxChat.scrollHeight;
+    };
+
+    let papelRenderizado = '';
+    let qtdChamadosAdminNotificados = -1;
+    let qtdMensagensClienteRenderizadas = -1;
+
+    const atualizarBotoesAtalhoPorPapel = () => {
+      if (sessaoAtual.papel === 'ceo') {
+        tituloPainelManual.textContent = '👑 Manual Rápido & Comandos do CEO';
+        manualCliente.classList.add('escondido');
+        manualCeo.classList.remove('escondido');
+        painelDiagnostico.classList.remove('escondido');
+
+        atalhosChat.classList.remove('escondido');
+        btnAtalhoEstoque.classList.remove('escondido');
+        btnAtalhoRestaurarCeo.classList.remove('escondido');
+        btnAtalhoDescontoCeo.classList.remove('escondido');
+        btnAtalhoGarantia.classList.add('escondido');
+        btnAtalhoDanfe.classList.add('escondido');
+        btnAtalhoHumano.classList.add('escondido');
+      } else if (sessaoAtual.papel === 'cliente') {
+        tituloPainelManual.textContent = '📚 Manual Rápido (FAQ)';
+        manualCliente.classList.remove('escondido');
+        manualCeo.classList.add('escondido');
+        painelDiagnostico.classList.add('escondido');
+
+        atalhosChat.classList.remove('escondido');
+        btnAtalhoEstoque.classList.remove('escondido');
+        btnAtalhoGarantia.classList.remove('escondido');
+        btnAtalhoDanfe.classList.remove('escondido');
+        btnAtalhoHumano.classList.remove('escondido');
+        btnAtalhoRestaurarCeo.classList.add('escondido');
+        btnAtalhoDescontoCeo.classList.add('escondido');
+      } else {
+        tituloPainelManual.textContent = '📚 Manual Rápido (FAQ)';
+        manualCliente.classList.remove('escondido');
+        manualCeo.classList.add('escondido');
+        painelDiagnostico.classList.add('escondido');
+        atalhosChat.classList.add('escondido');
+      }
+    };
+
+    const sincronizarEstadoChat = () => {
+      recarregarMemoria();
+      atualizarBotoesAtalhoPorPapel();
+
+      if (sessaoAtual.papel === 'visitante') {
+        statusChatCliente.textContent = '🔒 Celeste Bloqueada (Faça Login)';
+        statusChatCliente.style.color = '#f87171';
+        inputChat.disabled = true;
+        inputChat.placeholder = 'Faça login ou crie uma conta para conversar com a Celeste...';
+        btnEnviarChat.disabled = true;
+        btnEncerrarChamadoCliente.classList.add('escondido');
+
+        if (papelRenderizado !== 'visitante') {
+          papelRenderizado = 'visitante';
+          boxChat.innerHTML = '';
+          desenharBolha(
+            'celeste',
+            'Celeste IA',
+            '🔒 <strong>Login Necessário:</strong> Olá! Eu sou a Celeste ✨. Para conversar comigo e receber suporte, você precisa <strong>fazer login na sua conta</strong> ou <strong>criar uma conta</strong> primeiro!',
+            obterHoraAtual()
+          );
+        }
+        return;
+      }
+
+      inputChat.disabled = false;
+      btnEnviarChat.disabled = false;
+
+      if (sessaoAtual.papel === 'admin') {
+        statusChatCliente.textContent = '🔔 Modo Funcionário (Restrito a Notificações)';
+        statusChatCliente.style.color = '#fbbf24';
+        inputChat.placeholder = 'A IA está restrita apenas para notificações na sua conta...';
+        btnEncerrarChamadoCliente.classList.add('escondido');
+
+        const abertos = chamadosSuporte.filter((c) => c.status === 'aberto');
+        if (papelRenderizado !== 'admin' || abertos.length !== qtdChamadosAdminNotificados) {
+          papelRenderizado = 'admin';
+          qtdChamadosAdminNotificados = abertos.length;
+          boxChat.innerHTML = '';
+
+          if (abertos.length === 0) {
+            desenharBolha('celeste', 'Celeste IA', `Olá, colaborador <strong>${sessaoAtual.nome}</strong>! ✨<br>A minha IA está bloqueada para contas de funcionários comuns. O meu papel aqui é apenas notificar sobre novos chamados de clientes. No momento <strong>não há solicitações pendentes</strong>.`, obterHoraAtual());
+          } else {
+            const listaHtml = abertos.map((c) => `• <strong>${c.clienteNome}</strong>`).join('<br>');
+            desenharBolha('celeste', 'Celeste IA', `🚨 <strong>Alerta:</strong> Olá, <strong>${sessaoAtual.nome}</strong>! Você tem <strong>${abertos.length} chamado(s)</strong> aguardando resposta:<br><br>${listaHtml}<br><br><a href="atendimentos.html" class="btn-primario" style="display:inline-block; width:auto; margin-top:8px; padding:8px 14px;">🎧 Ir para a Central de Atendimentos</a>`, obterHoraAtual());
+          }
+        }
+        return;
+      }
+
+      if (sessaoAtual.papel === 'ceo') {
+        statusChatCliente.textContent = '👑 Celeste Desbloqueada · Controle Total do CEO';
+        statusChatCliente.style.color = '#a855f7';
+        inputChat.placeholder = 'Dê qualquer ordem à Celeste (preços, cores, textos, avisos, produtos)...';
+        btnEncerrarChamadoCliente.classList.add('escondido');
+
+        const abertos = chamadosSuporte.filter((c) => c.status === 'aberto');
+        if (papelRenderizado !== 'ceo' || abertos.length !== qtdChamadosAdminNotificados) {
+          papelRenderizado = 'ceo';
+          qtdChamadosAdminNotificados = abertos.length;
+          boxChat.innerHTML = '';
+          const resumoFila = abertos.length > 0 ? `<br><br>🔔 <strong>Aviso Rápido:</strong> Há <strong>${abertos.length} cliente(s)</strong> aguardando na <a href="atendimentos.html" style="color:var(--cor-neon);">Central de Atendimentos</a>.` : '<br><br>✅ A fila de atendimentos de clientes está limpa no momento.';
+          desenharBolha('celeste', 'Celeste IA', `👑 Bem-vindo de volta, <strong>CEO ${sessaoAtual.nome}</strong>! ✨<br>Tenho acesso a todas as páginas da Help-Tec e obedeço a qualquer comando seu: posso alterar preços, restaurar o estoque, mudar as cores de todo o site, editar títulos do Início, atualizar seu card da Equipe ou publicar avisos globais!${resumoFila}`, obterHoraAtual());
+        }
+        return;
+      }
+
+      const chamado = obterChamadoAtivoDoUsuario();
+      if (chamado) {
+        statusChatCliente.textContent = '● Conectado ao Atendimento Humano Ao Vivo';
+        statusChatCliente.style.color = '#fbbf24';
+        btnEncerrarChamadoCliente.classList.remove('escondido');
+
+        if (papelRenderizado !== 'cliente-chamado' || chamado.mensagens.length !== qtdMensagensClienteRenderizadas) {
+          papelRenderizado = 'cliente-chamado';
+          qtdMensagensClienteRenderizadas = chamado.mensagens.length;
+          boxChat.innerHTML = '';
+          chamado.mensagens.forEach((m) => { desenharBolha(m.autor, m.nome, m.texto, m.hora); });
+        }
+      } else {
+        statusChatCliente.textContent = '● Celeste Online (Suporte ao Cliente)';
+        statusChatCliente.style.color = 'var(--cor-primaria)';
+        btnEncerrarChamadoCliente.classList.add('escondido');
+        if (papelRenderizado !== 'cliente-livre') {
+          papelRenderizado = 'cliente-livre';
+          qtdMensagensClienteRenderizadas = -1;
+          boxChat.innerHTML = '';
+          desenharBolha('celeste', 'Celeste IA', `Olá, <strong>${sessaoAtual.nome}</strong>! Eu sou a <strong>Celeste</strong> ✨, a Inteligência Artificial da Help-Tec.<br><br>Estou pronta para tirar todas as suas dúvidas de suporte, informar todos os produtos do estoque ou chamar um funcionário ao vivo para você!`, obterHoraAtual());
+        }
+      }
+    };
+
+    const processarEntradaUsuario = (textoOriginal) => {
+      carregandoCeleste.hidden = false;
+
+      try {
+        recarregarMemoria();
+        if (!textoOriginal || !textoOriginal.trim()) {
+          throw new Error('Digite uma mensagem válida para a Celeste.');
+        }
+
+        if (sessaoAtual.papel === 'visitante') {
+          sincronizarEstadoChat();
+          return;
+        }
+
+        const textoLimpo = textoOriginal.trim().toLowerCase();
+        const hora = obterHoraAtual();
+
+        if (sessaoAtual.papel === 'admin') {
+          desenharBolha('cliente', sessaoAtual.nome, textoOriginal, hora);
+          const abertos = chamadosSuporte.filter((c) => c.status === 'aberto');
+          if (abertos.length === 0) {
+            desenharBolha('celeste', 'Celeste IA', '🔒 <strong>Acesso Restrito:</strong> Na conta de funcionário comum, apenas notifico sobre atendimentos pendentes (não há chamados abertos agora). Alterações de preços e comandos do site são exclusivos do CEO Davi Locatel.', obterHoraAtual());
+          } else {
+            const listaHtml = abertos.map((c) => `• <strong>${c.clienteNome}</strong>`).join('<br>');
+            desenharBolha('celeste', 'Celeste IA', `🔔 Você possui <strong>${abertos.length} chamado(s) aberto(s)</strong>:<br>${listaHtml}<br><a href="atendimentos.html" style="color:var(--cor-neon); font-weight:bold;">Clique aqui para atender agora</a>.`, obterHoraAtual());
+          }
+          return;
+        }
+
+        if (sessaoAtual.papel === 'ceo') {
+          desenharBolha('cliente', sessaoAtual.nome, textoOriginal, hora);
+          const respostaCeo = executarComandoIrrestritoCeo(textoLimpo, textoOriginal);
+          desenharBolha('celeste', 'Celeste IA', respostaCeo, obterHoraAtual());
+          return;
+        }
+
+        const chamadoExistente = obterChamadoAtivoDoUsuario();
+        if (chamadoExistente) {
+          chamadoExistente.mensagens.push({ autor: 'cliente', nome: sessaoAtual.nome, texto: textoOriginal, hora: hora });
+          chamadoExistente.naoLidoAdmin = true;
+          chamadoExistente.popupExibido = false;
+          salvarMemoria();
+          sincronizarEstadoChat();
+          return;
+        }
+
+        desenharBolha('cliente', sessaoAtual.nome, textoOriginal, hora);
+
+        const tentouComandoCeo = palavrasProibidasNaoCeo.some((termo) => textoLimpo.includes(termo));
+        if (tentouComandoCeo) {
+          desenharBolha(
+            'celeste',
+            'Celeste IA',
+            '🔒 <strong>Permissão Negada:</strong> Desculpe! Comandos para restaurar preços padrão, alterar valores, aplicar descontos ou modificar configurações do site são exclusivos do <strong>CEO Davi Locatel</strong>.',
+            obterHoraAtual()
+          );
+          return;
+        }
+
+        const pediuHumano = palavrasAtendimentoHumano.some((p) => textoLimpo.includes(p));
+        if (pediuHumano) {
+          const novoChamado = {
+            id: Date.now(), clienteNome: sessaoAtual.nome, clienteEmail: sessaoAtual.email, status: 'aberto', naoLidoAdmin: true, popupExibido: false,
+            mensagens: [
+              { autor: 'cliente', nome: sessaoAtual.nome, texto: textoOriginal, hora: hora },
+              { autor: 'celeste', nome: 'Celeste IA', texto: `Chamado aberto para <strong>${sessaoAtual.nome}</strong>! ✨ Acabei de acender o alerta vermelho no sino dos funcionários. Tudo o que você digitar agora vai direto em tempo real para o atendente!`, hora: hora }
+            ]
+          };
+          chamadosSuporte.push(novoChamado);
+          salvarMemoria();
+          sincronizarEstadoChat();
+          atualizarNotificacoesFuncionario();
+          return;
+        }
+
+        let respostaEncontrada = '';
+
+        if (textoLimpo.includes('estoque') || textoLimpo.includes('produtos') || textoLimpo.includes('preço') || textoLimpo.includes('preco') || textoLimpo.includes('catálogo') || textoLimpo.includes('catalogo')) {
+          respostaEncontrada = consultarEstoqueTempoReal();
+        }
+
+        if (respostaEncontrada === '') {
+          for (let i = 0; i < regrasClienteSuporte.length; i++) {
+            if (regrasClienteSuporte[i].palavras.some((p) => textoLimpo.includes(p))) {
+              respostaEncontrada = regrasClienteSuporte[i].resposta;
+              break;
+            }
+          }
+        }
+
+        if (respostaEncontrada === '') {
+          respostaEncontrada = '✨ No modo Cliente, sou focada em suporte! Posso informar todos os <strong>produtos e preços em estoque</strong>, explicar sobre <strong>garantia</strong> e <strong>DANFE</strong>, ou chamar um funcionário se digitar <strong>"quero falar com um atendente"</strong>!';
+        }
+
+        desenharBolha('celeste', 'Celeste IA', respostaEncontrada, obterHoraAtual());
+      } catch (erro) {
+        console.error('Erro processado no chat da Celeste:', erro.message);
+        desenharBolha('celeste', 'Celeste IA', `⚠️ <strong>Aviso do Sistema (try/catch):</strong> ${erro.message}`, obterHoraAtual());
+      } finally {
+        carregandoCeleste.hidden = true;
+      }
+    };
+
+    formChat.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+      const txt = inputChat.value;
+      inputChat.value = '';
+      processarEntradaUsuario(txt);
+    });
+
+    btnEncerrarChamadoCliente.addEventListener('click', () => {
+      const chamado = obterChamadoAtivoDoUsuario();
+      if (chamado) {
+        chamado.status = 'encerrado';
+        chamado.naoLidoAdmin = false;
+        salvarMemoria();
+        sincronizarEstadoChat();
+      }
+    });
+
+    const formLoginModalSuporte = document.querySelector('#form-login-modal');
+    const btnSairModalSuporte = document.querySelector('#btn-sair-conta');
+    const formEdicaoPerfilSuporte = document.querySelector('#form-edicao-perfil');
+
+    if (formLoginModalSuporte) {
+      formLoginModalSuporte.addEventListener('submit', () => {
+        papelRenderizado = '';
+        sincronizarEstadoChat();
+      });
+    }
+    if (btnSairModalSuporte) {
+      btnSairModalSuporte.addEventListener('click', () => {
+        papelRenderizado = '';
+        sincronizarEstadoChat();
+      });
+    }
+    if (formEdicaoPerfilSuporte) {
+      formEdicaoPerfilSuporte.addEventListener('submit', () => {
+        papelRenderizado = '';
+        sincronizarEstadoChat();
+      });
+    }
+
+    function enviarOpcaoChat(frase) { processarEntradaUsuario(frase); }
+
+    window.addEventListener('storage', sincronizarEstadoChat);
+    window.addEventListener('focus', sincronizarEstadoChat);
+    sincronizarEstadoChat();
+  </script>
+</body>
+</html>

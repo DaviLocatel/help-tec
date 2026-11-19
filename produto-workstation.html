@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Carrinho (Workstation PRO) - Help-Tec</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="hp.png" alt="Logo Help-Tec" class="logo-img">
+        <span class="logo-texto">Help-Tec</span>
+      </a>
+
+      <button type="button" id="btn-menu" class="menu-btn" aria-label="Abrir Menu">☰</button>
+
+      <div id="menu-colapsavel" class="menu-colapsavel">
+        <ul class="menu-lista">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Catálogo</a></li>
+          <li><a href="equipe.html">Sobre a Equipe</a></li>
+          <li><a href="carrinho-workstation.html" class="ativo">Carrinho</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <div class="painel-usuario-nav">
+          <img src="davi.jpg" alt="Avatar do Usuário" class="avatar-mini">
+          <div class="info-usuario-nav">
+            <span id="nav-nome-usuario" class="nome-usuario-nav">Visitante</span>
+            <span id="nav-status-usuario" class="status-usuario-nav">Desconectado</span>
+          </div>
+          <button type="button" id="btn-abrir-usuario" class="btn-entrar">Conta</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-principal">
+    <section class="topo-pagina">
+      <span class="tag-destaque">Checkout Help-Tec</span>
+      <h1>Meu Carrinho</h1>
+      <div class="acoes-linha">
+        <a href="carrinho-Tmoba.html" class="btn-carrinho">Ver PC T-Moba</a>
+        <a href="carrinho-upgrade.html" class="btn-carrinho">Ver Kit Upgrade</a>
+        <a href="carrinho-workstation.html" class="btn-entrar">Ver Workstation PRO</a>
+      </div>
+    </section>
+
+    <table class="tabela-carrinho">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Qtd</th>
+          <th>Preço Unitário</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PC Workstation PRO</strong><br><small>Intel Core i7 13700K</small></td>
+          <td>1</td>
+          <td>R$ 7.199,00</td>
+          <td>R$ 7.199,00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="carrinho-total">
+      Total a Pagar: R$ 7.199,00
+    </div>
+
+    <div class="acoes-direita">
+      <a href="index.html" class="btn-carrinho">Voltar ao Catálogo</a>
+      <a href="login.html" class="btn-comprar-agora">Finalizar Pedido</a>
+    </div>
+  </main>
+
+  <div id="modal-usuario" class="fundo-modal">
+    <div class="modal-conteudo card">
+      <button type="button" id="btn-fechar-modal" class="btn-fechar" aria-label="Fechar janela">X</button>
+
+      <div id="tela-login-modal">
+        <h2>Acesso Rápido</h2>
+        <p class="texto-apoio">Identifique-se para ativar seu painel de usuário no topo da página.</p>
+
+        <form id="form-login-modal" novalidate>
+          <div class="campo-grupo">
+            <label for="modal-login-nome">Seu Nome</label>
+            <input type="text" id="modal-login-nome" placeholder="Ex: Davi Locatel">
+            <span class="erro" id="erro-modal-login-nome"></span>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="modal-login-email">E-mail</label>
+            <input type="email" id="modal-login-email" placeholder="davi@helptec.com.br">
+            <span class="erro" id="erro-modal-login-email"></span>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="modal-login-senha">Senha</label>
+            <input type="password" id="modal-login-senha" placeholder="Mínimo 6 caracteres">
+            <span class="erro" id="erro-modal-login-senha"></span>
+          </div>
+
+          <button type="submit" class="btn-primario">Ativar Sessão</button>
+        </form>
+      </div>
+
+      <div id="tela-perfil-modal" class="escondido">
+        <div class="perfil-cabecalho">
+          <img src="davi.jpg" alt="Foto do Usuário" class="avatar-grande">
+          <h2 id="perfil-nome-exibicao">Davi Locatel</h2>
+          <span class="tag-destaque">Desenvolvedor de Sistemas</span>
+        </div>
+        <div class="perfil-detalhes">
+          <p><strong>E-mail:</strong> <span id="perfil-email-exibicao">davi@helptec.com.br</span></p>
+          <p><strong>Status:</strong> Sessão Ativa</p>
+        </div>
+        <button type="button" id="btn-sair-conta" class="btn-remover">Sair da Conta</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="rodape">
+    <p>&copy; 2026 Help-Tec. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
