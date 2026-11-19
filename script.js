@@ -15,18 +15,18 @@ function criarImagemSvgProduto(icone, titulo, corFundo1, corFundo2) {
 }
 
 const itensPadrao = [
-  { id: 1, nome: 'PC Gamer T-Moba (HT-101)', categoria: 'computadores', valorOriginal: 2499, valor: 2499, imagem: criarImagemSvgProduto('🖥️', 'PC Gamer T-Moba', '#0f172a', '#064e3b') },
-  { id: 2, nome: 'Kit Upgrade Ryzen 7 (HT-202)', categoria: 'hardware', valorOriginal: 1999, valor: 1999, imagem: criarImagemSvgProduto('⚙️', 'Kit Upgrade Ryzen 7', '#111827', '#1e293b') },
-  { id: 3, nome: 'PC Workstation PRO (HT-303)', categoria: 'computadores', valorOriginal: 7199, valor: 7199, imagem: criarImagemSvgProduto('🚀', 'Workstation PRO i7', '#0f172a', '#065f46') },
-  { id: 4, nome: 'Monitor Gamer Curvo 144Hz (HT-404)', categoria: 'perifericos', valorOriginal: 1299, valor: 1299, imagem: criarImagemSvgProduto('📺', 'Monitor Gamer 144Hz', '#111827', '#0f2942') },
-  { id: 5, nome: 'Teclado Mecânico RGB (HT-505)', categoria: 'perifericos', valorOriginal: 349, valor: 349, imagem: criarImagemSvgProduto('⌨️', 'Teclado Mecânico RGB', '#0f172a', '#1e293b') },
-  { id: 6, nome: 'Mouse Gamer Ultraleve 16000 DPI (HT-606)', categoria: 'perifericos', valorOriginal: 229, valor: 229, imagem: criarImagemSvgProduto('🖱️', 'Mouse Gamer 16000 DPI', '#111827', '#064e3b') },
-  { id: 7, nome: 'Headset Surround 7.1 RGB (HT-707)', categoria: 'perifericos', valorOriginal: 389, valor: 389, imagem: criarImagemSvgProduto('🎧', 'Headset Surround 7.1', '#0f172a', '#1e293b') },
-  { id: 8, nome: 'Placa de Vídeo RTX 4060 8GB (HT-808)', categoria: 'hardware', valorOriginal: 2199, valor: 2199, imagem: criarImagemSvgProduto('🎮', 'GeForce RTX 4060 8GB', '#064e3b', '#0f172a') },
-  { id: 9, nome: 'SSD NVMe M.2 1TB 5000MB/s (HT-909)', categoria: 'hardware', valorOriginal: 489, valor: 489, imagem: criarImagemSvgProduto('💾', 'SSD NVMe M.2 1TB', '#111827', '#1e293b') },
-  { id: 10, nome: 'Notebook Gamer Nitro i7 16GB (HT-110)', categoria: 'computadores', valorOriginal: 5499, valor: 5499, imagem: criarImagemSvgProduto('💻', 'Notebook Gamer Nitro', '#0f172a', '#065f46') },
-  { id: 11, nome: 'Gabinete Aquário Mid-Tower 4 Fans (HT-211)', categoria: 'hardware', valorOriginal: 429, valor: 429, imagem: criarImagemSvgProduto('🧊', 'Gabinete Aquário RGB', '#111827', '#0f2942') },
-  { id: 12, nome: 'Cadeira Gamer Ergonômica Pro (HT-312)', categoria: 'perifericos', valorOriginal: 949, valor: 949, imagem: criarImagemSvgProduto('💺', 'Cadeira Gamer Pro', '#0f172a', '#064e3b') }
+  { id: 1, nome: 'PC Gamer T-Moba (HT-101)', categoria: 'computadores', valorOriginal: 2499, valor: 2499, imagem: 'pcgamer.png' },
+  { id: 2, nome: 'Placa-Mãe B550M Aorus (HT-202)', categoria: 'hardware', valorOriginal: 999, valor: 999, imagem: 'placa-mãe.png' },
+  { id: 3, nome: 'PC Workstation PRO (HT-303)', categoria: 'computadores', valorOriginal: 7199, valor: 7199, imagem: 'workstation.png' },
+  { id: 4, nome: 'Monitor Gamer Curvo 144Hz (HT-404)', categoria: 'perifericos', valorOriginal: 1299, valor: 1299, imagem: 'monitor.png' },
+  { id: 5, nome: 'Teclado Mecânico RGB (HT-505)', categoria: 'perifericos', valorOriginal: 349, valor: 349, imagem: 'teclado.png' },
+  { id: 6, nome: 'Mouse Gamer Ultraleve 16000 DPI (HT-606)', categoria: 'perifericos', valorOriginal: 229, valor: 229, imagem: 'mouse.png' },
+  { id: 7, nome: 'Headset Surround 7.1 RGB (HT-707)', categoria: 'perifericos', valorOriginal: 389, valor: 389, imagem: 'headset.png' },
+  { id: 8, nome: 'Processador AMD Ryzen 9 (HT-808)', categoria: 'hardware', valorOriginal: 2199, valor: 2199, imagem: 'processador.png' },
+  { id: 9, nome: 'SSD NVMe M.2 1TB 5000MB/s (HT-909)', categoria: 'hardware', valorOriginal: 489, valor: 489, imagem: 'ssd.png' },
+  { id: 10, nome: 'Notebook Gamer Nitro i7 16GB (HT-110)', categoria: 'computadores', valorOriginal: 5499, valor: 5499, imagem: 'notbook.png' },
+  { id: 11, nome: 'Gabinete Aquário Mid-Tower 4 Fans (HT-211)', categoria: 'hardware', valorOriginal: 429, valor: 429, imagem: 'gabinete.png' },
+  { id: 12, nome: 'Cadeira Gamer Ergonômica Pro (HT-312)', categoria: 'perifericos', valorOriginal: 949, valor: 949, imagem: 'cadeira.png' }
 ];
 
 const equipePadrao = {
@@ -244,8 +244,9 @@ const normalizarDadosSalvos = () => {
     const existente = itens.find((i) => i.id === padrao.id);
     if (!existente) {
       itens.push({ ...padrao });
-    } else if (!existente.imagem || existente.imagem.includes('#312e81') || existente.imagem.includes('#3730a3')) {
+    } else {
       existente.imagem = padrao.imagem;
+      existente.nome = padrao.nome;
     }
   });
 
